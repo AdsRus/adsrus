@@ -7,11 +7,17 @@ import java.util.List;
 
 public class ListAdsDao implements Ads {
     private List<Ad> ads;
+    private long ui;
 
     public List<Ad> all() {
         if (ads == null) {
             ads = generateAds();
         }
+        return ads;
+    }
+
+
+    public List<Ad> all_ua(long ui) {
         return ads;
     }
 
