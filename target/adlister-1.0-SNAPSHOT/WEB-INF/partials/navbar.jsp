@@ -25,6 +25,18 @@
                 <a class="navbar-brand" href="/ads/create">Create Ad</a>
             </div>
         </c:if>
+
+        <div class="col-md-3">
+            <form class="navbar-form" role="search">
+                <div class="input-group add-on">
+                    <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         <c:if test="${sessionScope.user.username == null}" >
         </c:if>
         <ul class="nav navbar-nav navbar-right">
