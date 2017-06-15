@@ -23,7 +23,7 @@ public class SearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String searchAd = request.getParameter("srch-term");
         request.setAttribute("ads", DaoFactory.getAdsDao().all_searchads(searchAd));
-        response.sendRedirect("/ads");
+        request.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(request, response);
 
     }
 }
