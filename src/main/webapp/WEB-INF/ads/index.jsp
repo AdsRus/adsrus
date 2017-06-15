@@ -40,7 +40,7 @@
 
 <div class="container">
     <c:if test="${sessionScope.user.username == null}" >
-        <h1>Here Are all the ads!</h1>
+        <h1>Ads</h1>
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
