@@ -21,6 +21,10 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+    public List<Ad> all_searchads(String sa) {
+        return ads;
+    }
+
     public Long insert(Ad ad) {
         // make sure we have ads
         if (ads == null) {

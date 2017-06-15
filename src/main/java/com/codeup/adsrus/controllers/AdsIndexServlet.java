@@ -24,7 +24,7 @@ public class AdsIndexServlet extends HttpServlet {
 
         long use_id;
         Ad ad = new Ad(
-                use_id = user.getId(), // for now we'll hardcode the user id
+                use_id = user.getId(),
                 request.getParameter("title"),
                 request.getParameter("description")
         );
