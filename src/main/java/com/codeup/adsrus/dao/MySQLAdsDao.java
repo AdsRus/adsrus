@@ -51,6 +51,58 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
+    //add code to extract only a specific ad
+    public List<Ad> findById(long id) {
+        String idS = String.valueOf(id).toString();
+        PreparedStatement stmt = null;
+        String myPassedSql = "SELECT * FROM ads WHERE id =" +idS;
+        try {
+            stmt = connection.prepareStatement(myPassedSql);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+
+//    public Ad findById(long id) {
+//        try {
+//            Statement statement = connection.createStatement();
+//            String query = "SELECT * FROM ads WHERE id=2";    //" + id;
+//            ResultSet rs = statement.executeQuery(query);
+//            rs.next();
+//            return extractAd(rs);
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error retrieving an Ad.", e);
+//        }
+//    }
+    //add code to extract only a specific ad
+//    public List<Ad> adSpecific() {
+//        List<Ad> specificAd = new ArrayList<>();
+//
+//        PreparedStatement stmt = null;
+//        String sqlSt = "SELECT u.username, a.title, a.description FROM ads AS a join users AS u on a.user_id = u.id LIMIT 1;";
+//        try {
+//            stmt = connection.prepareStatement(sqlSt);
+//            ResultSet rs = stmt.executeQuery();
+//            while (rs.next()){
+//               specificAd.add(extractSpecAd(rs));
+//                //System.out.println(specificAd.add(extractSpecAd(rs)));
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    return specificAd;
+//    }
+//    private Ad extractSpecAd(ResultSet rs) throws SQLException {
+//        return new Ad(
+//                rs.getString("username"),
+//                rs.getString("title"),
+//                rs.getString("description")
+//        );
+//    }
+//
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
