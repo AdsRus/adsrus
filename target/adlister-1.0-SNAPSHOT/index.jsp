@@ -32,6 +32,29 @@
             padding-top: 9px;
         }
 
+        #ads-red {
+            color: red;
+        }
+
+        #ads-blue {
+            color: blue;
+        }
+
+        #bkgrnd {
+            background-color: #F8F8F8;
+            font-weight: bold;
+            border-radius: 5px;
+            width: 170px;
+            margin-left: -27px;
+            padding-left: 7px;
+            border: 1px solid #eeeeee;
+        }
+
+        #ads-grey {
+            color: #747483;
+
+        }
+
     </style>
 </head>
 
@@ -41,7 +64,7 @@
     <c:if test="${sessionScope.user == null}">
         <jsp:include page="/WEB-INF/partials/navbar.jsp" />
         <div class="container">
-            <h1>Welcome to ads-R-us</h1>
+            <h1 id="bkgrnd"><em><span id="ads-red">ads</span><span id="ads-grey">-R-</span><span id="ads-blue">us</span></em></h1>
         </div>
     </c:if>
 
