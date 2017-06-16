@@ -13,4 +13,6 @@ public interface Ads {
     List<Ad> all_searchads(String ad);
     // insert a new ad and return the new ad's id
     Long insert(Ad ad);
+
+    List<Ad> findById(long id);
 }

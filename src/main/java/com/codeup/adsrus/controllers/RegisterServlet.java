@@ -40,12 +40,6 @@ public class RegisterServlet extends HttpServlet {
         boolean passwordFormat = isPasswordLengthSeven(password);
 
 
-        /*if (inputHasErrors || validemailFormat || passwordFormat) {
-            response.sendRedirect("/register");
-            JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),"Your ");
-            return;
-        }*/
-
 
         if (inputHasErrors) {
             JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),"Fields cannot be empty!");

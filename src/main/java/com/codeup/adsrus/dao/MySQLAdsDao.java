@@ -59,7 +59,7 @@ public class MySQLAdsDao implements Ads {
         try {
             stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ?");
             String pid = ad + "%";
-            stmt.setString(1,pid);
+            stmt.setString(1, pid);
             ResultSet rs = stmt.executeQuery();
 
             return createAdsFromResults(rs);
@@ -84,6 +84,21 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error creating a new ad.", e);
         }
     }
+    //add code to extract only a specific ad
+    public List<Ad> findById(long id) {
+        String idS = String.valueOf(id).toString();
+        PreparedStatement stmt = null;
+        String myPassedSql = "SELECT * FROM ads WHERE id =" +idS;
+        try {
+            stmt = connection.prepareStatement(myPassedSql);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
