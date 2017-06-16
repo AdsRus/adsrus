@@ -15,6 +15,7 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/ads">Adlister</a>
         </div>
+
         <c:if test="${sessionScope.user.username == null}" >
         <div class="navbar-header">
             <a class="navbar-brand" href="/register">Register</a>

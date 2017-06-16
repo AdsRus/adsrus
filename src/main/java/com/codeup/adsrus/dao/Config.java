@@ -11,7 +11,7 @@ public class Config {
 
     public Config() {
         this.url = "jdbc:mysql://localhost/adlister_db?serverTimezone=UTC";
-        this.user = "adlist_user";
+        this.user = "root";
         this.password= "codeup";
     }
 
