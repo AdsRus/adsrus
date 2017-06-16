@@ -59,7 +59,7 @@ public class MySQLAdsDao implements Ads {
         try {
             stmt = connection.prepareStatement("SELECT * FROM ads WHERE title LIKE ?");
             String pid = ad + "%";
-            stmt.setString(1, pid);
+            stmt.setString(1,pid);
             ResultSet rs = stmt.executeQuery();
 
             return createAdsFromResults(rs);

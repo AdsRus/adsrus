@@ -32,6 +32,11 @@
             padding-top: 9px;
         }
 
+        a.titl {
+            text-decoration: none;
+
+        }
+
     </style>
 </head>
 
@@ -43,7 +48,7 @@
         <h1>Ads</h1>
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
-                <a href="/individual"><h2>${ad.title}</h2></a>
+                <a class="titl" href="/individual?id=${ad.id}"><h2>${ad.title}</h2></a>
                 <p>${ad.description}</p>
             </div>
         </c:forEach>
@@ -52,7 +57,7 @@
         <h1>${sessionScope.user.username} - ads!</h1>
         <c:forEach var="ad" items="${ads}">
             <div class="col-md-6">
-                <a href="/individual"><h2>${ad.title}</h2></a>
+                <a class="titl" href="/individual?id=${ad.id}"><h2>${ad.title}</h2></a>
                 <p>${ad.description}</p>
             </div>
         </c:forEach>

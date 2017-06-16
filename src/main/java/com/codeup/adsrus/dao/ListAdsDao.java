@@ -1,4 +1,3 @@
-/*
 package com.codeup.adsrus.dao;
 
 import com.codeup.adsrus.models.Ad;
@@ -72,4 +71,3 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 }
-*/
