@@ -26,6 +26,9 @@
                 <a class="navbar-brand" href="/ads/create">Create Ad</a>
             </div>
         </c:if>
+
+        <jsp:include page="/WEB-INF/search.jsp" />
+
         <c:if test="${sessionScope.user.username == null}" >
         </c:if>
         <ul class="nav navbar-nav navbar-right">
